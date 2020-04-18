@@ -1,7 +1,7 @@
 <%-- 
-    Document   : Login
-    Created on : 16/04/2020, 11:49:57
-    Author     : Martins
+    Document   : listaOngs
+    Created on : Apr 18, 2020, 2:30:04 PM
+    Author     : Lucas Rasec
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
@@ -16,7 +16,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
         <link rel="stylesheet" href="css/style.css">
-        <title>Lista de Usuários</title>
+        <title>Lista de Ongs</title>
     </head>
 
     <body>
@@ -24,21 +24,19 @@
             <section class="row justify-content-center">
                 <section class="col-12 col-sm-6 col-md-3">
                    <table class="table-container">
-                        <h4>Lista de Usuários</h4><br>
+                        <h4>Lista de Ongs</h4><br>
                         <table>
-                        <jsp:useBean id="usuarioB" scope="session" class="bean.UsuarioBean"/>
-                        <td>Nome : <jsp:getProperty name="usuarioB" property="nome"/><br></td>
-                        <td>CPF : <jsp:getProperty name="usuarioB" property="cpf"/><br></td>
-                        <td>Email :<jsp:getProperty name="usuarioB" property="email"/><br></td>
-                        <td>Senha :<jsp:getProperty name="usuarioB" property="senha"/><br></td>
+                        <jsp:useBean id="usuarioB" scope="session" class="bean.OngBean"/>
+                        <td>Nome : <br></td>
+                        <td>Contato : <br></td>
+                        <td>Email :<br></td>                    
                         <a href="login.jsp">Deslogar</a>
                         </table>
-                    <c:forEach items="${userList}" var="user">
+                    <c:forEach items="${ongList}" var="ong">
                         <tr>
-                            <td>${user.nome}</td>
-                            <td>${user.cpf}</td>
-                            <td>${user.email}</td>
-                            <td>${user.senha}</td>
+                            <td>${ong.nome}</td>
+                            <td>${ong.number}</td>
+                            <td>${ong.email}</td>
                         </tr>
                     </c:forEach>
                     </table>
@@ -53,3 +51,4 @@
 </body>
 
 </html>
+

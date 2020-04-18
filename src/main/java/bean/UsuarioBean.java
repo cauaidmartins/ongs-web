@@ -6,12 +6,14 @@
 package bean;
 
 import java.io.Serializable;
+import java.util.UUID;
 
 /**
  *
  * @author Martins
  */
 public class UsuarioBean implements Serializable {
+    private String id;
     private String nome;
     private String email;
     private String cpf;
@@ -22,12 +24,14 @@ public class UsuarioBean implements Serializable {
     cpf = "";
     email = "";
     senha = "";
-    
+    this.id = UUID.randomUUID().toString();
     
     
     }
     
-
+    public String getId() {
+        return id;
+    }
     /**
      * @return the nome
      */

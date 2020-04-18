@@ -8,6 +8,9 @@ package servlets;
 import bean.UsuarioBean;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.LinkedList;
+import java.util.List;
+import javax.servlet.ServletContext;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -23,6 +26,8 @@ public class CadastroServlet extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         
+        String operation = request.getParameter("operetion");
+        
         UsuarioBean user = new UsuarioBean();
         
         user.setNome(request.getParameter("nome"));
@@ -30,9 +35,37 @@ public class CadastroServlet extends HttpServlet {
         user.setEmail(request.getParameter("email"));
         user.setSenha(request.getParameter("senha"));
         
-        request.setAttribute("usuarioB" , user);
-        request.getRequestDispatcher("listaUsuario.jsp").forward(request, response);
+        
+        ServletContext context = getServletContext();
 
+        List<UsuarioBean> userList;
+
+        if (context.getAttribute("userList") == null) {
+            userList = new LinkedList<>();
+        } else {
+            userList = (List<UsuarioBean>) context.getAttribute("userList");
+        }
+
+        if (operation == null) {
+            userList.add(user);
+            context.setAttribute("user", user);
+        }
+
+        if (operation != null && operation.equalsIgnoreCase("PUT")) {
+            String id = request.getParameter("id");
+            for (UsuarioBean customerFromList : userList) {
+                if (customerFromList.getId().equalsIgnoreCase(id)) {
+                    customerFromList.setNome(user.getNome());
+                    customerFromList.setEmail(user.getEmail());
+                    customerFromList.setCpf(user.getCpf());
+                    break;
+                }
+
+            }
+        }   
+        
+        context.setAttribute("userList", userList);
+        response.sendRedirect("listaUsuario.jsp");
     }
       // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
     /**
