@@ -74,7 +74,7 @@
                             <input type="email"  placeholder="Email" name="email">
                             <input type="password"  placeholder="Senha" name="senha">
                             <button>Cadastrar</button>
-
+                         </form>
                     </div>
 
             </div>
