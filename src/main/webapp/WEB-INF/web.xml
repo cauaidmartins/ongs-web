@@ -6,7 +6,7 @@
     </servlet>
     <servlet>
         <servlet-name>CadastroServlet</servlet-name>
-        <servlet-class>servlets.CadastroServlet</servlet-class>
+        <servlet-class>servlets.UsuarioServlet</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>LoginServlet</servlet-name>

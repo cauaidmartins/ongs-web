@@ -25,19 +25,19 @@ import javax.servlet.http.HttpServletResponse;
 @WebServlet(name = "OngServlet", urlPatterns = {"/OngServlet"})
 public class OngServlet extends HttpServlet {
 
-        protected void processRequest(HttpServletRequest request, HttpServletResponse response)
+    protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        
-            String operation = request.getParameter("operetion");
-        
-            OngBean ong = new OngBean();
-        
-            ong.setName(request.getParameter("nome"));
-            ong.setNumber(request.getParameter("cpf"));
-            ong.setEmail(request.getParameter("email"));
-            ong.setDesc(request.getParameter("desc"));
-            
-            ServletContext context = getServletContext();
+
+        String operation = request.getParameter("operetion");
+
+        OngBean ong = new OngBean();
+
+        ong.setName(request.getParameter("name"));
+        ong.setNumber(request.getParameter("number"));
+        ong.setEmail(request.getParameter("email"));
+        ong.setDesc(request.getParameter("desc"));
+
+        ServletContext context = getServletContext();
 
         List<OngBean> ongList;
 
@@ -63,9 +63,9 @@ public class OngServlet extends HttpServlet {
                 }
 
             }
-        }   
-        
+        }
+
         context.setAttribute("ongList", ongList);
         response.sendRedirect("listaOngs.jsp");
-        }
+    }
 }

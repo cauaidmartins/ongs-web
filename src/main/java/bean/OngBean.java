@@ -7,32 +7,27 @@ package bean;
 
 import java.io.Serializable;
 import java.util.UUID;
+
 /**
  *
  * @author Lucas Rasec
  */
-public class OngBean {
+public class OngBean implements Serializable {
+
     private String id;
     private String name;
-    private String desc;
-
-    public String getDesc() {
-        return desc;
-    }
-
-    public void setDesc(String desc) {
-        this.desc = desc;
-    }
     private String number;
     private String email;
-    
-    public OngBean(){
-    name = "";
-    number = "";
-    email = "";
-    this.id = UUID.randomUUID().toString();
+    private String desc;
+
+    public OngBean() {
+        name = "";
+        number = "";
+        email = "";
+        desc = "";
+        this.id = UUID.randomUUID().toString();
     }
-    
+
     public String getId() {
         return id;
     }
@@ -60,5 +55,12 @@ public class OngBean {
     public void setEmail(String email) {
         this.email = email;
     }
-    
+
+    public String getDesc() {
+        return desc;
+    }
+
+    public void setDesc(String desc) {
+        this.desc = desc;
+    }
 }
