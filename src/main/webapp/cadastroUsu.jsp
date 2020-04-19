@@ -22,7 +22,7 @@
     <body>
         <div class="wrapper d-flex align-items-stretch">
             <nav id="sidebar" class="active">
-                <h6><a href="principal.jsp" class="logo">OngJua</a></h6>
+                <h6><a href="principal.jsp" class="logo">OngWeb</a></h6>
                 <ul class="list-unstyled components mb-5">
                     <li class="active">
                         <a href="principal.jsp"><span class="fa fa-home"></span>Inicio</a>
