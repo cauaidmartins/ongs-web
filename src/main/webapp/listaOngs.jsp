@@ -85,7 +85,7 @@
                                     <td>${ong.number}</td>
                                     <td>${ong.email}</td>
                                     <td>
-                                        <a class="btn btn-primary" href="${pageContext.request.contextPath}/listaOngs?ongId=${ong.id}">Editar</a> 
+                                        <a class="btn btn-primary" href="${pageContext.request.contextPath}/OngServlet?ongId=${ong.id}">Editar</a> 
                                       
                                     </td>
                                 </tr>

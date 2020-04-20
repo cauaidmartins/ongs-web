@@ -79,7 +79,7 @@ public class OngServlet extends HttpServlet {
         
           List<OngBean> ongList = (List<OngBean>) getServletContext()
                 .getAttribute("ongList");
-        RequestDispatcher requestDispatcher = req.getRequestDispatcher("login.jsp");
+        RequestDispatcher requestDispatcher = req.getRequestDispatcher("atualizar.jsp");
 
         for (OngBean ong : ongList) {
             if (ong.getId().equalsIgnoreCase(ongId)) {
