@@ -24,7 +24,7 @@
 
     <body><div class="wrapper d-flex align-items-stretch">
             <nav id="sidebar" class="active">
-                <h6><a href="principal.jsp" class="logo">OngJua</a></h6>
+                <h6><a href="principal.jsp" class="logo">OngWeb</a></h6>
                 <ul class="list-unstyled components mb-5">
                     <li class="active">
                         <a href="principal.jsp"><span class="fa fa-home"></span>Inicio</a>
@@ -54,9 +54,7 @@
                             <i class="fa fa-bars"></i>
                             <span class="sr-only">Toggle Menu</span>
                         </button>
-                        <button class="btn btn-dark d-inline-block d-lg-none ml-auto" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                            <i class="fa fa-bars"></i>
-                        </button>
+                       
 
                         <div class="collapse navbar-collapse" id="navbarSupportedContent">
                             <ul class="nav navbar-nav ml-auto">

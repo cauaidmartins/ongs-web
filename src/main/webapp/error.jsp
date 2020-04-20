@@ -8,10 +8,20 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <!-- Google font -->
+        <link href="https://fonts.googleapis.com/css?family=Cabin:400,700" rel="stylesheet">
+        <link type="text/css" rel="stylesheet" href="css/style.css" />
         <title>JSP Page</title>
     </head>
-    <body>
-        <h1>Erro 404 !</h1>
+    <body class="body-error">
+       <div id="notfound">
+		<div class="notfound">
+			<div class="notfound-404">
+				<h1>Oops!</h1>
+				<h2>404 - PAGINA NÃO ENCONTRADA</h2>
+			</div>
+			<a href="login.jsp">Pagina Inicial</a>
+		</div>
+	</div>
     </body>
 </html>

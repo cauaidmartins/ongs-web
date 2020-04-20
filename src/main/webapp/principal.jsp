@@ -50,9 +50,6 @@
                             <i class="fa fa-bars"></i>
                             <span class="sr-only">Toggle Menu</span>
                         </button>
-                        <button class="btn btn-dark d-inline-block d-lg-none ml-auto" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                            <i class="fa fa-bars"></i>
-                        </button>
 
                         <div class="collapse navbar-collapse" id="navbarSupportedContent">
                             <ul class="nav navbar-nav ml-auto">
@@ -67,9 +64,9 @@
                 </div><br>
                 <h2 class="example">ONG</h2>
                 <div  class="container" align="justify">
-                    
+
                     <div class="col-sm">
-                        
+
                         <h8>
                             <p> ONG é a sigla para Organização Não-Governamental. São todas as organizações, sem fins lucrativos, criadas por pessoas que trabalham voluntariamente em defesa de uma causa, seja ela, proteção do meio ambiente, defesa dos direitos humanos, erradicação do trabalho infantil etc.</p>
 
@@ -83,14 +80,14 @@
 
                             <p>Muitas ONGs, em todo o mundo, foram organizadas para defender o meio ambiente. Entre eles destaca-se o Greenpeace (do inglês green=verde, e peace=paz), que atuam em muitos países. Quando o meio ambiente está ameaçado, o Greenpeace e outras ONGs protestam publicamente para que a população tome conhecimento dos desastres ambientais.</p>
                             </p></h8>
-                        </div>
                     </div>
                 </div>
             </div>
+        </div>
 
-            <script src="js/jquery.min.js"></script>
-            <script src="js/popper.js"></script>
-            <script src="js/bootstrap.min.js"></script>
-            <script src="js/main.js"></script>
+        <script src="js/jquery.min.js"></script>
+        <script src="js/popper.js"></script>
+        <script src="js/bootstrap.min.js"></script>
+        <script src="js/main.js"></script>
     </body>
 </html>
