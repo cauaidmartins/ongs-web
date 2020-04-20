@@ -10,6 +10,7 @@ import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.LinkedList;
 import java.util.List;
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletContext;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -25,7 +26,7 @@ import javax.servlet.http.HttpServletResponse;
 public class UsuarioServlet extends HttpServlet {
 
     
-    protected void processRequest(HttpServletRequest request, HttpServletResponse response)
+    public void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         
         String operation = request.getParameter("operetion");
@@ -55,7 +56,7 @@ public class UsuarioServlet extends HttpServlet {
 
         if (operation != null && operation.equalsIgnoreCase("PUT")) {
             String id = request.getParameter("id");
-            for (UsuarioBean customerFromList : userList) {
+            for (UsuarioBean customerFromList :    userList) {
                 if (customerFromList.getId().equalsIgnoreCase(id)) {
                     customerFromList.setNome(user.getNome());
                     customerFromList.setEmail(user.getEmail());
@@ -68,8 +69,7 @@ public class UsuarioServlet extends HttpServlet {
         
         context.setAttribute("userList", userList);
         response.sendRedirect("listaUsuario.jsp");
-    }
-      // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
+    }    // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
     /**
      * Handles the HTTP <code>GET</code> method.
      *
@@ -107,5 +107,22 @@ public class UsuarioServlet extends HttpServlet {
     public String getServletInfo() {
         return "Short description";
     }// </editor-fold>
-
+    
+   
+//    @Override
+//    protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+//        String userId = req.getParameter("userId");
+//
+//        ServletContext context = getServletContext();
+//        List<UsuarioBean> userList = (List<UsuarioBean>) context.getAttribute("userList");
+//       List<UsuarioBean> userList = (List<UsuarioBean>) getServletContext().getAttribute("userList");
+//        RequestDispatcher requestDispatcher = req.getRequestDispatcher("update.jsp");
+//
+//        for (UsuarioBean user : userList) {
+//            if (user.getId().equalsIgnoreCase(userId)) {
+//                req.setAttribute("customerToUpdate", user);
+//                break;
+//            }
+//        }
+//    }
 }

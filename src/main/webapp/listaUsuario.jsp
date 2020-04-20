@@ -87,6 +87,9 @@
                                     <td>${user.cpf}</td>
                                     <td>${user.email}</td>
                                     <td>${user.senha}</td>
+                                    <td>
+                                        <a href="${pageContext.request.contextPath}/UsuarioServlet?userId=${user.id}" method="PUT">Editar</a>
+                                    </td>
                                 </tr>
                             </c:forEach>
                         </tbody>
