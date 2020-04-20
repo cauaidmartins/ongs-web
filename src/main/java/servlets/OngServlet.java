@@ -11,6 +11,7 @@ import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.LinkedList;
 import java.util.List;
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletContext;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -29,13 +30,14 @@ public class OngServlet extends HttpServlet {
             throws ServletException, IOException {
 
         String operation = request.getParameter("operetion");
-
+        
         OngBean ong = new OngBean();
-
+       
         ong.setName(request.getParameter("name"));
         ong.setNumber(request.getParameter("number"));
         ong.setEmail(request.getParameter("email"));
         ong.setDesc(request.getParameter("desc"));
+        
 
         ServletContext context = getServletContext();
 
@@ -54,11 +56,12 @@ public class OngServlet extends HttpServlet {
 
         if (operation != null && operation.equalsIgnoreCase("PUT")) {
             String id = request.getParameter("id");
-            for (OngBean customerFromList : ongList) {
-                if (customerFromList.getId().equalsIgnoreCase(id)) {
-                    customerFromList.setName(ong.getName());
-                    customerFromList.setEmail(ong.getEmail());
-                    customerFromList.setNumber(ong.getNumber());
+            for (OngBean ongFromList : ongList) {
+                if (ongFromList.getId().equalsIgnoreCase(id)) {
+                    ongFromList.setName(ong.getName());
+                    ongFromList.setNumber(ong.getNumber());
+                    ongFromList.setEmail(ong.getEmail());
+                    
                     break;
                 }
 
@@ -68,4 +71,24 @@ public class OngServlet extends HttpServlet {
         context.setAttribute("ongList", ongList);
         response.sendRedirect("listaOngs.jsp");
     }
+    
+    protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        String ongId = req.getParameter("ongId");
+
+        ServletContext context = getServletContext();
+        
+          List<OngBean> ongList = (List<OngBean>) getServletContext()
+                .getAttribute("ongList");
+        RequestDispatcher requestDispatcher = req.getRequestDispatcher("login.jsp");
+
+        for (OngBean ong : ongList) {
+            if (ong.getId().equalsIgnoreCase(ongId)) {
+                req.setAttribute("ongToUpdate", ong);
+                break;
+            }
+        }
+        
+        requestDispatcher.forward(req, resp);
+
+   }
 }

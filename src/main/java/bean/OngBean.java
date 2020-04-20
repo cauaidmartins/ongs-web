@@ -21,10 +21,10 @@ public class OngBean implements Serializable {
     private String desc;
 
     public OngBean() {
-        name = "";
-        number = "";
-        email = "";
-        desc = "";
+        this.name = "";
+        this.number = "";
+        this.email = "";
+        this.desc = "";
         this.id = UUID.randomUUID().toString();
     }
 

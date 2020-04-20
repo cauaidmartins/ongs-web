@@ -54,7 +54,7 @@
                             <i class="fa fa-bars"></i>
                             <span class="sr-only">Toggle Menu</span>
                         </button>
-                       
+
 
                         <div class="collapse navbar-collapse" id="navbarSupportedContent">
                             <ul class="nav navbar-nav ml-auto">
@@ -68,13 +68,14 @@
                 </nav>
 
                 <h7 class="mb-4"> 
-                     <h4>Lista de Ongs</h4><br>
+                    <h4>Lista de Ongs</h4><br>
                     <table class="table">
                         <thead>
                             <tr>
                                 <th>Nome</th>
                                 <th>Contato</th>
                                 <th>Email</th>
+                                <th></th>
                             </tr>
                         </thead>
                         <tbody>
@@ -83,7 +84,10 @@
                                     <td>${ong.name}</td>
                                     <td>${ong.number}</td>
                                     <td>${ong.email}</td>
-
+                                    <td>
+                                        <a class="btn btn-primary" href="${pageContext.request.contextPath}/listaOngs?ongId=${ong.id}">Editar</a> 
+                                      
+                                    </td>
                                 </tr>
                             </c:forEach>
                         </tbody>

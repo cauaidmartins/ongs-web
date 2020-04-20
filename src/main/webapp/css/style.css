@@ -25,12 +25,8 @@
 
 .body-back{
     
-    background:  url('../images/ong2.jpg');
-    width: 100%;
-    max-height: auto;  /* Máximo da altura da imagem */
-    min-height: auto;      /* Mínimo da altura, por padrão “auto” */
-    background-size:100%;
-    background-repeat: no-repeat;
+    background: #3cc0c5;
+    
 }
 
 .login-page {
@@ -74,7 +70,7 @@
     cursor: pointer;
 }
 .form button:hover,.form button:active,.form button:focus {
-    background: #59A5D8;
+    background: #3cc;
 }
 .form .message {
     margin: 15px 0 0;
